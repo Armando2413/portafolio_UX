@@ -1,0 +1,119 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: rgba(var(--color-background), 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand a {
+  color: var(--color-accent);
+  font-size: var(--font-size-h3);
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+.social-icon {
+  color: var(--color-text);
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.social-icon:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.navbar-menu li a {
+  color: var( --color-accent);
+  text-decoration: none;
+  font-size: var(--font-size-body);
+  transition: color var(--transition-fast);
+}
+
+.navbar-menu li a:hover {
+  color: var(--color-primary);
+}
+
+.navbar-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.navbar-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #ffffff; /* barras del toggle en blanco */
+  transition: var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .socials {
+    display: none; /* hide social icons on very small screens to save space */
+  }
+
+  .navbar-menu-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    flex-direction: column;
+    background-color: var(--color-background);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+  }
+
+  .navbar-menu.is-open {
+    transform: translateX(0);
+  }
+}
